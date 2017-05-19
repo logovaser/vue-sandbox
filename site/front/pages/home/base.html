@@ -1,0 +1,10 @@
+<div class="vs-home">
+    <div class="container">
+        <div class="row">
+            <div v-for="card in cards" class="col-xs-12 col-sm-6">
+                <card :heading="card.heading" :text="card.text" :img-src="card.src"
+                      class="well"></card>
+            </div>
+        </div>
+    </div>
+</div>

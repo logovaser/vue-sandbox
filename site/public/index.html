@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Vue SPA</title>
+    <base href="/">
+</head>
+<body>
+<div id="app">
+    <header>
+        <div class="header-item">Heading</div>
+    </header>
+
+    <router-view id="view"></router-view>
+
+    <footer>
+        <router-link to="/home" class="footer-item"><img src="/res/house.svg"></router-link>
+        <router-link to="/login" class="footer-item"><img src="/res/avatar.svg"></router-link>
+        <!--<a ui-sref="home" class="footer-item"><img src="/res/house.svg"></a>-->
+        <!--<a ui-sref="cameraTest" class="footer-item"><img src="/res/photo-camera.svg"></a>-->
+        <!--<a ui-sref="cabinet" class="footer-item"><img src="/res/avatar.svg"></a>-->
+    </footer>
+</div>
+</body>
+<script src="static/main.js"></script>
+</html>
