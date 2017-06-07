@@ -1,7 +1,7 @@
-<form ng-submit="submit()">
+<form @submit="submit($event)">
     <label for="reg-from-login">Login</label>
-    <input id="reg-from-login" ng-model="form.login">
+    <input id="reg-from-login" v-model="form.login">
     <label for="reg-from-pass">Password</label>
-    <input type="password" id="reg-from-pass" ng-model="form.password">
+    <input type="password" id="reg-from-pass" v-model="form.password">
     <button>Register</button>
 </form>

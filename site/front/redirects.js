@@ -2,14 +2,15 @@
  * Created by logov on 05-May-17.
  */
 
-export let redirectToLoginIfNotAuth = ['$q', '$state', '$timeout', 'userFactory', function ($q, $state, $timeout, userFactory) {
-    return $q((res, rej) => $timeout(() => {
+let userFactory = null;
 
-        let auth = userFactory.isAuthenticated();
+export let redirectsInit = (factory) => userFactory = factory;
 
-        if (auth) auth
-            .then(() => res(), () => rej($state.go('login')))
-            .catch(() => rej($state.go('login')));
-        else rej($state.go('login'))
-    }))
-}];
+export let userIsAuth = (to, from, next) => {
+    let auth = userFactory.isAuthenticated();
+
+    if (auth) auth
+        .then(() => next(), () => next('login'))
+        .catch(() => next('login'));
+    else next('login');
+};

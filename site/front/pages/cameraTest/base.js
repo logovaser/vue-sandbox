@@ -3,7 +3,11 @@
  */
 
 import template from './base.html'
+import {wait} from '../../async'
 
-export default function cameraTestPage($compileProvider) {
-    $compileProvider.component('cameraTestPage', {template});
+const camera = wait(import('../../comp/camera/base'));
+
+export default {
+    components: {camera},
+    template
 }

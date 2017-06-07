@@ -2,9 +2,23 @@
     <div class="container">
         <div class="row">
             <div v-for="card in cards" class="col-xs-12 col-sm-6">
-                <card :heading="card.heading" :text="card.text" :img-src="card.src"
+                <card :heading="card.heading" :text="card.text" :img-src="card.src" @testEvent="eventTest()"
                       class="well"></card>
             </div>
         </div>
     </div>
+
+
+    <modal :show.sync="showCustomModal" effect="fade">
+        <div slot="modal-header" class="modal-header">
+            <h4 class="modal-title">
+                <i>Custom</i> <code>Modal</code> <b>Title</b>
+            </h4>
+        </div>
+        <div slot="modal-body" class="modal-body">...</div>
+        <div slot="modal-footer" class="modal-footer">
+            <button type="button" class="btn btn-default" @click="showCustomModal = false">Exit</button>
+            <button type="button" class="btn btn-success" @click="showCustomModal = false">Custom Save</button>
+        </div>
+    </modal>
 </div>

@@ -3,8 +3,20 @@
  */
 
 import template from './base.html'
-import controller from './ctrl'
 
-export default function registerPage($compileProvider) {
-    $compileProvider.component('registerPage', {template, controller});
+import http from 'axios'
+
+export default {
+    template,
+    data: function () {
+        return {
+            form: {}
+        }
+    },
+    methods: {
+        submit: function (e) {
+            e.preventDefault();
+            http.post('/auth/register', this.form);
+        }
+    }
 }

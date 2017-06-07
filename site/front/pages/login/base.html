@@ -1,16 +1,16 @@
 <div class="container">
     <div class="well">
-        <form ng-submit="submit()">
+        <form @submit="submit($event)">
             <div class="form-group">
                 <label for="login-from-login" class="control-label">Login</label>
-                <input id="login-from-login" class="form-control" ng-model="form.login">
+                <input id="login-from-login" class="form-control" v-model="form.login">
             </div>
             <div class="form-group">
                 <label for="login-from-pass" class="control-label">Password</label>
-                <input type="password" id="login-from-pass" class="form-control" ng-model="form.password">
+                <input type="password" id="login-from-pass" class="form-control" v-model="form.password">
             </div>
             <button class="btn btn-raised btn-default">Sign in</button>
-            <a ui-sref="register" class="btn btn-default">Register</a>
+            <router-link to="/register" class="btn btn-default">Register</router-link>
         </form>
     </div>
 </div>

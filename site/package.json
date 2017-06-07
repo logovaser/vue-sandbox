@@ -10,21 +10,22 @@
     }
   ],
   "dependencies": {
+    "axios": "latest",
+    "bootstrap": "latest",
+    "bootstrap-material-design": "latest",
     "vue": "latest",
     "vue-router": "latest",
-    "bootstrap": "latest",
-    "bootstrap-material-design": "latest"
+    "vue-strap": "latest"
   },
   "devDependencies": {
-    "bundle-loader": "latest",
     "css-loader": "latest",
     "file-loader": "latest",
+    "html-minify-loader": "latest",
     "less": "latest",
     "less-loader": "latest",
-    "html-minify-loader": "latest",
     "raw-loader": "latest",
     "style-loader": "latest",
-    "webpack": "latest",
-    "uglify-js": "git+https://github.com/mishoo/UglifyJS2.git#harmony"
+    "uglify-js": "git+https://github.com/mishoo/UglifyJS2.git#harmony",
+    "webpack": "latest"
   }
 }
